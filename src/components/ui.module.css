@@ -1,0 +1,41 @@
+.button {
+  position: relative;
+  cursor: pointer;
+
+  border-radius: 0.5rem;
+  margin: 0;
+  padding: 0.6rem 1.2rem;
+  border: none;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition-duration: 0.15s;
+
+  background-color: var(--oc-indigo-7);
+  color: var(--oc-white);
+
+  box-shadow: 0 5px 20px rgba(var(--oc-black-rgb), 0.15);
+}
+.large {
+  font-size: 1.2rem;
+  padding: 0.8rem 1.25rem;
+}
+.button:hover {
+  background-color: var(--oc-indigo-9);
+}
+.square {
+  padding: 0.4rem;
+
+  font-size: 1rem;
+}
+.clicked {
+  transform: scale(0.9);
+}
+.button[disabled] {
+  cursor: not-allowed;
+}

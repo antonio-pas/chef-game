@@ -1,0 +1,40 @@
+.recipeBook {
+  width: clamp(200px, 30vw, 600px);
+  height: clamp(200px, 70vh, 1000px);
+
+  padding: 1rem;
+  border: 1px solid var(--oc-gray-7);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+
+  overflow-y: scroll;
+}
+.recipeBookHeader {
+  font-size: 1.5rem;
+}
+
+.recipe {
+  position: relative;
+
+  padding: 1rem;
+  border: 1px solid var(--oc-gray-7);
+  border-radius: 0.5rem;
+
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+.recipe button {
+  align-self: flex-end;
+}
+.recipeHeader {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.recipeInstructions {
+  position: absolute;
+  left: 100%;
+}

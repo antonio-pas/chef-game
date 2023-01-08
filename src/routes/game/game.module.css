@@ -1,0 +1,14 @@
+.container {
+  padding: 1rem;
+  position: relative;
+}
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+.top {
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
