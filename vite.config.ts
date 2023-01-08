@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [preact()],
   resolve: {
     alias: {
-      "$assets": "src/assets",
-      "$components": "src/components",
-      "$lib": "src/lib"
+      "$assets": "/src/assets",
+      "$components": "/src/components",
+      "$lib": "/src/lib"
     }
   }
 })
