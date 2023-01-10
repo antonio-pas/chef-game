@@ -16,8 +16,8 @@ export const Game: FunctionalComponent<{}> = () => {
   const [inTutorial, setInTutorial] = useState(true);
   const div = useRef<HTMLDivElement>(null);
   useEffect(() => {
+    if (inTutorial || div.current === null) return;
     const kitchen = new Kitchen();
-    if (div.current === null) return;
     console.log(kitchen.objects);
     const camera = new PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
@@ -28,10 +28,10 @@ export const Game: FunctionalComponent<{}> = () => {
     window.onresize = () => {
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
-    div.current?.appendChild(renderer.domElement);
+    div.current.appendChild(renderer.domElement);
 
     kitchen.add(new Egg());
-    const controls = new DragControls(kitchen.objects.map((x) => x.mesh), camera, renderer.domElement);
+    const controls = new DragControls(kitchen.getDraggableObjects(), camera, renderer.domElement);
     controls.addEventListener("hoveron", (e) => {
       e.object.material.emissive.set(0xaaaaaa);
     });
@@ -53,7 +53,7 @@ export const Game: FunctionalComponent<{}> = () => {
       }
       cancelAnimationFrame(id);
     }
-  }, []);
+  }, [inTutorial]);
   if (inTutorial) {
     return (
       <Tutorial messages={tutorialMessages} initialIndex={0} onTutorialEnd={() => setInTutorial(false)} />

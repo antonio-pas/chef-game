@@ -1,5 +1,3 @@
-import { createContext } from "preact";
-import { useContext } from "preact/hooks";
 import * as THREE from "three";
 export interface CookingObject {
   mesh: THREE.Mesh;
@@ -49,6 +47,9 @@ export class Kitchen {
     counter.mesh.position.y = -2;
     this.add(new Counter());
   }
+  getDraggableObjects() {
+    return this.objects.filter((o) => o.draggable).map((o) => o.mesh);
+  }
   constructor() {
     this.scene = new THREE.Scene();
     this.objects = [];
@@ -94,28 +95,5 @@ export class Kitchen {
   }
   draw(camera: THREE.Camera, renderer: THREE.Renderer) {
     renderer.render(this.scene, camera);
-  }
-}
-
-class Observable<T> {
-  value: T;
-  listeners: ((t: T) => void)[]
-  constructor(value: T) {
-    this.value = value;
-    this.listeners = [];
-  }
-  get() { 
-    return this.value;
-  }
-  set() {
-    this.listeners.forEach((l) => l(this.value));
-  }
-  subscribe(listener: (t: T) => void) {
-    this.listeners.push(listener);
-
-    return () => this.unsubscribe(listener);
-  }
-  unsubscribe(listener: (t: T) => void) {
-    this.listeners = this.listeners.filter((l) => l !== listener);
   }
 }
