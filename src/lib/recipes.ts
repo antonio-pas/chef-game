@@ -2,9 +2,9 @@ import { Recipe } from "$lib/recipe";
 import mouseClickGif from "$assets/mouse-click.gif";
 export const recipes: Recipe[] = [
   {
-    title: "Omelette",
+    title: "Pasta",
     difficulty: 2,
-    description: "An omelette is a dish made from beaten eggs cooked in butter or oil in a pan.",
+    description: "Pasta is a type of food typically made from an unleavened dough of wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.",
     instructions: [
       "Crack two eggs in a bowl and beat viggoruslee",
       "Season the eggs with salt and pepper",
@@ -14,9 +14,9 @@ export const recipes: Recipe[] = [
     ]
   },
   {
-    title: "Pasta Alla Carbonara",
-    difficulty: 4,
-    description: "Carbonara is an Italian pasta dish made with eggs, cheese, pork, and black pepper.",
+    title: "Fried Egg",
+    difficulty: 3,
+    description: "A fried egg, also known as sunny-side up is a cooked dish made from one or more eggs placed into a frying pan and fried.",
     instructions: [
       "Set a pot of water to boil and add a generous amount of salt",
       "While the water is boiling, crack two eggs in a bowl and grate 100g of pecorino romano",
@@ -39,9 +39,9 @@ export const recipes: Recipe[] = [
 ];
 const recipeOverview = recipes.map((r, i) => `${i + 1}. ${r.title}`).join('\n');
 export const tutorialMessages: [string, string, string][] = [
-  ["Chef Game", `Hello, welcome to chef game, the game where you learn to cook through hands-on experience.\n
+  ["Cook It Up", `Hello, welcome to Cook It Up, the game where you learn to cook through hands-on experience.\n
   Before you start cooking, let's go over some basic controls.`, ""],
-  ["Controls", `Left click to pick up items and drop them`, mouseClickGif],
+  ["Controls", `Left click to pick up items and drop them.\nLet go of the left mouse button to put ingredients in a pan`, ""],
   ["Good Luck", `Below is an overview of the dishes you will cook. 
     You will start with the most simple and work your way up to more complex dishes.
     Try to not mess the dishes up, but also have fun!\n
